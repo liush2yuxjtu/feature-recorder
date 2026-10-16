@@ -1,0 +1,11 @@
+{
+  "rubric": {"R1":20,"R2":15,"R3":20,"R4":15,"R5":15,"R6":10,"R7":5},
+  "candidates": [
+    {"id":"A","scores":{"R1":4,"R2":3,"R3":4,"R4":3,"R5":4,"R6":3,"R7":2},"total":70},
+    {"id":"B","scores":{"R1":5,"R2":3,"R3":5,"R4":4,"R5":5,"R6":4,"R7":2},"total":86,"winner":true},
+    {"id":"C","scores":{"R1":3,"R2":4,"R3":4,"R4":3,"R5":5,"R6":4,"R7":3},"total":74},
+    {"id":"D_terminal_only","scores":{"R1":3,"R2":3,"R3":5,"R4":4,"R5":1,"R6":4,"R7":2},"total":62,"rejected":"looks like human Terminal"},
+    {"id":"E_chat_only","scores":{"R1":4,"R2":5,"R3":3,"R4":2,"R5":3,"R6":5,"R7":4},"total":70}
+  ],
+  "winner":"B"
+}

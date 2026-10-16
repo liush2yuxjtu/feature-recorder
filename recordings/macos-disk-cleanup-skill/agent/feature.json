@@ -1,0 +1,27 @@
+{
+ "feature_id": "macos-disk-cleanup-agent-demo",
+ "ui_language": "en",
+ "ui_language_evidence": {
+  "preflight": "English UI chrome (Cursor/Agent/Terminal/Explorer labels); no CJK in HTML",
+  "postcheck": "cjk_frames=0 in verify/legibility.json"
+ },
+ "take_verification": {
+  "take": "take-agent",
+  "verdict": "keep",
+  "strip": "verify/legibility-strip.png",
+  "reason": "agent-facing"
+ },
+ "clip_test_cutout": {
+  "applicable": false,
+  "note": "no stock footage / cutout feature"
+ },
+ "presentation": {
+  "zoom": "post cosine ease Screen-Studio style",
+  "speed_ramp": null
+ },
+ "recording_lock": {
+  "used": false,
+  "note": "rendered on Linux box; Mac mini not touched"
+ },
+ "host": "linux-box-playwright-html"
+}

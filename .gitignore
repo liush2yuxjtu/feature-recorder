@@ -1,0 +1,6 @@
+frames/
+edits/
+out-gallery/
+*.mp4
+*.gif
+__pycache__/

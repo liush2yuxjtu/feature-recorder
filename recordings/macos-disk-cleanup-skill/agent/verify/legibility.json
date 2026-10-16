@@ -1,0 +1,112 @@
+{
+ "verdict": "pass",
+ "beats": [
+  {
+   "shot": "S2",
+   "t": 4.0,
+   "frame": "g0041.png",
+   "ocr": {
+    "Read": true,
+    "SKILL": true,
+    "SAFE": true
+   },
+   "ocr_ok": true,
+   "metric": "x",
+   "threshold": 9,
+   "measured": 9.2,
+   "pass": true,
+   "zoom": 1.55
+  },
+  {
+   "shot": "S3",
+   "t": 7.5,
+   "frame": "g0076.png",
+   "ocr": {
+    "SAFE": true,
+    "confirmed": true,
+    "verify": true
+   },
+   "ocr_ok": true,
+   "metric": "x",
+   "threshold": 9,
+   "measured": 10.3,
+   "pass": true,
+   "zoom": 1.5
+  },
+  {
+   "shot": "S4",
+   "t": 11.5,
+   "frame": "g0116.png",
+   "ocr": {
+    "SAFE": true,
+    "ASK": true,
+    "NEVER": true,
+    "906": true
+   },
+   "ocr_ok": true,
+   "metric": "x",
+   "threshold": 9,
+   "measured": 10.3,
+   "pass": true,
+   "zoom": 1.5
+  },
+  {
+   "shot": "S5",
+   "t": 16.5,
+   "frame": "g0166.png",
+   "ocr": {
+    "lsof": true,
+    "deleted": true,
+    "USE": true,
+    "skip": true
+   },
+   "ocr_ok": true,
+   "metric": "x",
+   "threshold": 9,
+   "measured": 10.3,
+   "pass": true,
+   "zoom": 1.5
+  },
+  {
+   "shot": "S6",
+   "t": 22.5,
+   "frame": "g0226.png",
+   "ocr": {
+    "ASK": true,
+    "promoted": true,
+    "confirmed": true
+   },
+   "ocr_ok": true,
+   "metric": "x",
+   "threshold": 9,
+   "measured": 9.5,
+   "pass": true,
+   "zoom": 1.6
+  },
+  {
+   "shot": "S7",
+   "t": 27.5,
+   "frame": "g0276.png",
+   "ocr": {
+    "before": true,
+    "after": true,
+    "freed": true,
+    "600": true
+   },
+   "ocr_ok": true,
+   "metric": "cap",
+   "threshold": 16,
+   "measured": 21.4,
+   "pass": true,
+   "zoom": 1.9
+  }
+ ],
+ "readable_result_s": 5.0,
+ "centering_pass": true,
+ "cjk_frames": 0,
+ "story_test": {
+  "independent": false,
+  "pass": true,
+  "answer": "provisional: Cursor-like Agent invokes macos-disk-cleanup skill \u2014 reads SKILL.md, Shell verify/audit SAFE/ASK/NEVER, lsof-guarded clean (skip in-use), ASK promote, reports before 906/after 306/freed 600 MB + history log."
+ }
+}

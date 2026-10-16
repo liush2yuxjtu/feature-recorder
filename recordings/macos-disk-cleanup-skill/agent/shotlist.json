@@ -1,0 +1,343 @@
+{
+ "take": "take-agent",
+ "gif": {
+  "width": 800,
+  "fps": 10,
+  "duration_s": 33
+ },
+ "shots": [
+  {
+   "id": "S1",
+   "t_start": 0.0,
+   "t_end": 2.2,
+   "t_raw_start": 0.0,
+   "beat": "t0",
+   "framing": "full",
+   "zoom": 1.0,
+   "crop_css": [
+    0,
+    0,
+    1280.0,
+    720.0
+   ],
+   "roi_css": [
+    0,
+    0,
+    1280.0,
+    720.0
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "establish: user asks + skill",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "macos-disk-cleanup",
+    "Agent"
+   ],
+   "legibility_px": null,
+   "transition_in": "cut",
+   "ease": "cosine, log-zoom",
+   "hold_s": 2.2,
+   "purpose": "establish: user asks + skill"
+  },
+  {
+   "id": "S2",
+   "t_start": 2.2,
+   "t_end": 5.8,
+   "t_raw_start": 2.2,
+   "beat": "t1",
+   "framing": "medium",
+   "zoom": 1.55,
+   "crop_css": [
+    454.2,
+    0,
+    825.8,
+    464.5
+   ],
+   "roi_css": [
+    454.2,
+    0,
+    825.8,
+    464.5
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "Read SKILL.md",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "Read",
+    "SKILL.md",
+    "SAFE"
+   ],
+   "legibility_px": {
+    "metric": "x_height",
+    "measured": 9.2,
+    "threshold": 9,
+    "pass": true
+   },
+   "transition_in": "push-in 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 3.6,
+   "purpose": "Read SKILL.md"
+  },
+  {
+   "id": "S3",
+   "t_start": 5.8,
+   "t_end": 9.2,
+   "t_raw_start": 5.8,
+   "beat": "t2",
+   "framing": "medium",
+   "zoom": 1.5,
+   "crop_css": [
+    273.3,
+    240.0,
+    853.3,
+    480.0
+   ],
+   "roi_css": [
+    273.3,
+    240.0,
+    853.3,
+    480.0
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "verify.sh SAFE confirmed",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "SAFE",
+    "confirmed=true",
+    "verify.sh"
+   ],
+   "legibility_px": {
+    "metric": "x_height",
+    "measured": 10.3,
+    "threshold": 9,
+    "pass": true
+   },
+   "transition_in": "push-in 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 3.4,
+   "purpose": "verify.sh SAFE confirmed"
+  },
+  {
+   "id": "S4",
+   "t_start": 9.2,
+   "t_end": 14.2,
+   "t_raw_start": 9.2,
+   "beat": "t3",
+   "framing": "medium",
+   "zoom": 1.5,
+   "crop_css": [
+    426.7,
+    20.0,
+    853.3,
+    480.0
+   ],
+   "roi_css": [
+    426.7,
+    20.0,
+    853.3,
+    480.0
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "audit chips SAFE/ASK/NEVER + 906 MB",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "SAFE",
+    "ASK",
+    "NEVER",
+    "906 MB"
+   ],
+   "legibility_px": {
+    "metric": "x_height",
+    "measured": 10.3,
+    "threshold": 9,
+    "pass": true
+   },
+   "transition_in": "push-in 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 5.0,
+   "purpose": "audit chips SAFE/ASK/NEVER + 906 MB"
+  },
+  {
+   "id": "S5",
+   "t_start": 14.2,
+   "t_end": 19.5,
+   "t_raw_start": 14.2,
+   "beat": "t4",
+   "framing": "medium",
+   "zoom": 1.5,
+   "crop_css": [
+    273.3,
+    240.0,
+    853.3,
+    480.0
+   ],
+   "roi_css": [
+    273.3,
+    240.0,
+    853.3,
+    480.0
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "lsof deleted; IN USE skip",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "lsof",
+    "deleted",
+    "IN USE",
+    "skip"
+   ],
+   "legibility_px": {
+    "metric": "x_height",
+    "measured": 10.3,
+    "threshold": 9,
+    "pass": true
+   },
+   "transition_in": "push-in 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 5.3,
+   "purpose": "lsof deleted; IN USE skip"
+  },
+  {
+   "id": "S6",
+   "t_start": 19.5,
+   "t_end": 25.2,
+   "t_raw_start": 19.5,
+   "beat": "t5",
+   "framing": "medium",
+   "zoom": 1.6,
+   "crop_css": [
+    480.0,
+    35.0,
+    800.0,
+    450.0
+   ],
+   "roi_css": [
+    480.0,
+    35.0,
+    800.0,
+    450.0
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "ASK promote rule",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "ASK",
+    "rule promoted",
+    "confirmed_by_human"
+   ],
+   "legibility_px": {
+    "metric": "x_height",
+    "measured": 9.5,
+    "threshold": 9,
+    "pass": true
+   },
+   "transition_in": "push-in 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 5.7,
+   "purpose": "ASK promote rule"
+  },
+  {
+   "id": "S7",
+   "t_start": 25.2,
+   "t_end": 30.2,
+   "t_raw_start": 25.2,
+   "beat": "t6",
+   "framing": "close",
+   "zoom": 1.9,
+   "crop_css": [
+    606.3,
+    80.5,
+    673.7,
+    378.9
+   ],
+   "roi_css": [
+    606.3,
+    80.5,
+    673.7,
+    378.9
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "freed 600 MB payoff",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "before:",
+    "after:",
+    "freed: 600 MB"
+   ],
+   "legibility_px": {
+    "metric": "cap_height",
+    "measured": 21.4,
+    "threshold": 16,
+    "pass": true
+   },
+   "transition_in": "push-in 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 5.0,
+   "purpose": "freed 600 MB payoff"
+  },
+  {
+   "id": "S8",
+   "t_start": 30.2,
+   "t_end": 33.0,
+   "t_raw_start": 30.2,
+   "beat": "t6",
+   "framing": "full",
+   "zoom": 1.0,
+   "crop_css": [
+    0,
+    0,
+    1280.0,
+    720.0
+   ],
+   "roi_css": [
+    0,
+    0,
+    1280.0,
+    720.0
+   ],
+   "roi_center_offset_pct": [
+    0,
+    0
+   ],
+   "roi_in_frame": true,
+   "focus": "pull-out loop",
+   "pointer": "n/a (agent UI)",
+   "text_expected": [
+    "freed: 600 MB"
+   ],
+   "legibility_px": null,
+   "transition_in": "pull-out 0.65s",
+   "ease": "cosine, log-zoom",
+   "hold_s": 2.8,
+   "purpose": "pull-out loop"
+  }
+ ]
+}

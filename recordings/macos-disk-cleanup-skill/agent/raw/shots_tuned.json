@@ -1,0 +1,131 @@
+[
+ [
+  "S1",
+  0.0,
+  2.2,
+  "t0",
+  1.0,
+  640,
+  360,
+  "establish: user asks agent + skill chip",
+  [
+   "macos-disk-cleanup",
+   "My Mac is low on disk",
+   "Agent"
+  ],
+  "full"
+ ],
+ [
+  "S2",
+  2.2,
+  5.8,
+  "t1",
+  1.45,
+  1000,
+  250,
+  "agent Reading SKILL.md (activation)",
+  [
+   "Read",
+   "SKILL.md",
+   "SAFE/ASK/NEVER"
+  ],
+  "medium"
+ ],
+ [
+  "S3",
+  5.8,
+  9.2,
+  "t2",
+  1.35,
+  740,
+  560,
+  "verify.sh \u2192 SAFE confirmed=true",
+  [
+   "SAFE",
+   "confirmed=true",
+   "verify.sh"
+  ],
+  "medium"
+ ],
+ [
+  "S4",
+  9.2,
+  14.2,
+  "t3",
+  1.4,
+  740,
+  560,
+  "audit table SAFE/ASK/NEVER used 906 MB",
+  [
+   "SAFE",
+   "ASK",
+   "NEVER",
+   "906 MB"
+  ],
+  "medium"
+ ],
+ [
+  "S5",
+  14.2,
+  19.5,
+  "t4",
+  1.4,
+  740,
+  560,
+  "lsof before delete; Yarn IN USE skip",
+  [
+   "lsof",
+   "deleted",
+   "IN USE",
+   "skip"
+  ],
+  "medium"
+ ],
+ [
+  "S6",
+  19.5,
+  25.2,
+  "t5",
+  1.5,
+  1000,
+  280,
+  "ASK y \u2192 rule promoted SAFE",
+  [
+   "ASK",
+   "rule promoted",
+   "confirmed_by_human"
+  ],
+  "medium"
+ ],
+ [
+  "S7",
+  25.2,
+  30.2,
+  "t6",
+  1.7,
+  1020,
+  290,
+  "payoff before/after freed 600 MB",
+  [
+   "before:",
+   "after:",
+   "freed: 600 MB",
+   "history/demo-run.json"
+  ],
+  "close"
+ ],
+ [
+  "S8",
+  30.2,
+  33.0,
+  "t6",
+  1.0,
+  640,
+  360,
+  "pull-out full for loop seam",
+  [
+   "freed: 600 MB"
+  ],
+  "full"
+ ]
+]

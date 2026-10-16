@@ -1,0 +1,4 @@
+take1 discard: S2 roi offset -32.7% (top clamp), late scroll broke S6 ROI, empty first frame, gif 4.3MB; evidence run/take1-scroll-clamp/contact.png
+take2 discard: result hold S6 only 2.2s (<3s gate); dark pad band above window in S2; evidence run/take2/contact.png
+take=take-agent verdict=keep reason=agent-facing Cursor chrome (SKILL.md + Agent chat + terminal); prior terminal-only rejected by user as human workflow evidence=verify/legibility.json,verify/cold-viewer-contact-sheet.png
+take=take-terminal-v1 verdict=discard reason=looked like human Terminal.app workflow not agent invoking skill evidence=user CRITICAL feedback 2026-10-16

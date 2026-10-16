@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Agent demo — macos-disk-cleanup</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 720px; overflow: hidden; background: #0d0d0d; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; color: #e4e4e7; }
+  #stage { width: 1280px; height: 720px; position: relative; background: #18181b; }
+
+  /* mac window chrome */
+  .titlebar {
+    height: 36px; display: flex; align-items: center; gap: 8px;
+    padding: 0 14px; background: #27272a; border-bottom: 1px solid #3f3f46;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot.r { background: #ff5f57; }
+  .dot.y { background: #febc2e; }
+  .dot.g { background: #28c840; }
+  .title { flex: 1; text-align: center; font-size: 13px; color: #a1a1aa; letter-spacing: 0.02em; }
+  .badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    background: #3b82f6; color: #fff; font-weight: 600;
+  }
+
+  .body { display: grid; grid-template-columns: 200px 1fr 360px; grid-template-rows: 1fr 300px; height: 684px; }
+  .sidebar {
+    grid-row: 1 / 3; background: #1c1c1f; border-right: 1px solid #3f3f46;
+    padding: 10px 0; font-size: 14px;
+  }
+  .sidebar .sec { color: #71717a; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; }
+  .file {
+    padding: 5px 14px 5px 18px; display: flex; align-items: center; gap: 8px;
+    color: #d4d4d8; cursor: default; white-space: nowrap;
+  }
+  .file.active { background: #27272a; color: #fff; border-left: 2px solid #3b82f6; padding-left: 16px; }
+  .file .ico { color: #a78bfa; font-size: 12px; width: 14px; }
+  .file .ico.md { color: #60a5fa; }
+  .file .ico.sh { color: #34d399; }
+  .file .ico.json { color: #fbbf24; }
+
+  .editor {
+    background: #18181b; border-right: 1px solid #3f3f46; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .tabs { display: flex; background: #1c1c1f; border-bottom: 1px solid #3f3f46; height: 32px; }
+  .tab {
+    padding: 0 14px; display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: #a1a1aa; border-right: 1px solid #3f3f46;
+  }
+  .tab.on { background: #18181b; color: #fafafa; }
+  .tab .x { color: #52525b; }
+  .code {
+    flex: 1; padding: 12px 16px; font-family: "IBM Plex Mono", "Roboto Mono", "DejaVu Sans Mono", monospace;
+    font-size: 15px; line-height: 1.5; overflow: hidden; white-space: pre;
+  }
+  .code .ln { color: #52525b; display: inline-block; width: 28px; user-select: none; }
+  .code .kw { color: #c084fc; }
+  .code .str { color: #86efac; }
+  .code .cm { color: #71717a; }
+  .code .hl { background: rgba(59,130,246,0.18); display: block; margin: 0 -16px; padding: 0 16px; }
+  .code .read-caret {
+    display: inline-block; width: 2px; height: 14px; background: #3b82f6; vertical-align: -2px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .chat {
+    background: #141416; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .chat-head {
+    height: 32px; display: flex; align-items: center; padding: 0 12px;
+    border-bottom: 1px solid #3f3f46; font-size: 12px; color: #a1a1aa; gap: 8px;
+  }
+  .chat-head .dot-live { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; }
+  .msgs { flex: 1; padding: 12px; overflow: hidden; display: flex; flex-direction: column; gap: 10px; }
+  .msg { font-size: 14px; line-height: 1.45; max-width: 100%; }
+  .msg.user {
+    align-self: flex-end; background: #27272a; border: 1px solid #3f3f46;
+    padding: 8px 12px; border-radius: 12px 12px 4px 12px; color: #f4f4f5;
+  }
+  .msg.agent { align-self: stretch; color: #e4e4e7; }
+  .msg.agent .who { font-size: 11px; color: #60a5fa; font-weight: 600; margin-bottom: 4px; }
+  .tool { font-size: 13px;
+    margin-top: 6px; border: 1px solid #3f3f46; border-radius: 8px; background: #1c1c1f;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace; font-size: 14px; overflow: hidden;
+  }
+  .tool .th {
+    padding: 6px 10px; background: #27272a; color: #a1a1aa; display: flex; gap: 8px; align-items: center;
+  }
+  .tool .th .name { color: #fbbf24; font-weight: 600; }
+  .tool .tb { padding: 8px 10px; color: #d4d4d8; white-space: pre-wrap; }
+  .tool.reading .name { color: #60a5fa; }
+  .chip {
+    display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 4px;
+    background: #14532d; color: #86efac; font-weight: 600; margin-right: 4px;
+  }
+  .chip.ask { background: #713f12; color: #fde68a; }
+  .chip.never { background: #7f1d1d; color: #fecaca; }
+  .chip.skill {
+    background: #1e3a8a; color: #93c5fd; font-size: 11px; padding: 2px 8px;
+    border-radius: 999px; margin-bottom: 6px; display: inline-block;
+  }
+
+  .term {
+    grid-column: 2 / 4; background: #0c0c0e; border-top: 1px solid #3f3f46;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .term-tabs {
+    height: 28px; display: flex; align-items: center; padding: 0 10px; gap: 12px;
+    background: #18181b; border-bottom: 1px solid #3f3f46; font-size: 11px; color: #a1a1aa;
+  }
+  .term-tabs .on { color: #fafafa; border-bottom: 2px solid #3b82f6; height: 28px; display: flex; align-items: center; }
+  .term-body {
+    flex: 1; padding: 10px 14px; font-family: "IBM Plex Mono", "Roboto Mono", "DejaVu Sans Mono", monospace;
+    font-size: 17px; line-height: 1.45; overflow: hidden; white-space: pre; color: #e4e4e7;
+  }
+  .term-body .prompt { color: #60a5fa; }
+  .term-body .cwd { color: #a78bfa; }
+  .term-body .safe { color: #4ade80; font-weight: 700; }
+  .term-body .ask { color: #fbbf24; font-weight: 700; }
+  .term-body .never { color: #f87171; font-weight: 700; }
+  .term-body .dim { color: #71717a; }
+  .term-body .ok { color: #86efac; }
+  .term-body .warn { color: #fde68a; }
+  .term-body .hi { color: #fafafa; font-weight: 700; }
+  .term-body .cursor {
+    display: inline-block; width: 8px; height: 15px; background: #e4e4e7; vertical-align: -2px;
+    animation: blink 1s step-end infinite;
+  }
+
+  /* spotlight zoom is applied by capture via CSS transform on #stage */
+  #stage { transform-origin: 0 0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="titlebar">
+    <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+    <div class="title">Cursor — macos-disk-cleanup-skill · demo@mac</div>
+    <div class="badge">Agent</div>
+  </div>
+  <div class="body">
+    <aside class="sidebar">
+      <div class="sec">Explorer</div>
+      <div class="file" id="f-skill"><span class="ico md">📄</span> SKILL.md</div>
+      <div class="file" id="f-rules"><span class="ico json">{}</span> rules.json</div>
+      <div class="file" id="f-verify"><span class="ico sh">$</span> scripts/verify.sh</div>
+      <div class="file" id="f-hist"><span class="ico json">{}</span> history/demo-run.json</div>
+      <div class="sec" style="margin-top:12px">Skills</div>
+      <div class="file active" id="f-skill2"><span class="ico md">⚡</span> macos-disk-cleanup</div>
+    </aside>
+
+    <section class="editor">
+      <div class="tabs">
+        <div class="tab on" id="tab-skill">SKILL.md <span class="x">×</span></div>
+        <div class="tab" id="tab-rules">rules.json <span class="x">×</span></div>
+      </div>
+      <div class="code" id="code"></div>
+    </section>
+
+    <section class="chat">
+      <div class="chat-head"><span class="dot-live"></span> Agent · macos-disk-cleanup</div>
+      <div class="msgs" id="msgs"></div>
+    </section>
+
+    <section class="term">
+      <div class="term-tabs">
+        <span class="on">Terminal</span>
+        <span>Problems</span>
+        <span class="dim" style="margin-left:auto;color:#71717a">demo@mac · zsh</span>
+      </div>
+      <div class="term-body" id="term"></div>
+    </section>
+  </div>
+</div>
+<script>
+const SKILL_LINES = [
+  ['cm', '---'],
+  ['', 'name: <span class="str">macos-disk-cleanup</span>'],
+  ['', 'description: audit + safely free Mac disk'],
+  ['cm', '---'],
+  ['', ''],
+  ['', '# macOS disk cleanup (verified, learning)'],
+  ['', ''],
+  ['', '1. Classify paths with <span class="kw">verify.sh</span> → SAFE / ASK / NEVER'],
+  ['', '2. Auto-clean only SAFE + confirmed_by_human'],
+  ['', '3. Before delete: <span class="kw">lsof +D</span> — skip if in use'],
+  ['', '4. ASK: ask human once, then promote rule'],
+  ['', '5. Report before/after + write history/'],
+];
+
+const TERM_BEATS = {
+  empty: '',
+  verify: `<span class="prompt">demo@mac</span> <span class="cwd">skill</span> $ scripts/verify.sh ~/Library/Caches/Homebrew
+<span class="safe">SAFE</span> ~/Library/Caches/Homebrew/** confirmed=true`,
+  audit: `<span class="prompt">demo@mac</span> <span class="cwd">skill</span> $ scripts/verify.sh ~/Library/Caches/Homebrew
+<span class="safe">SAFE</span> ~/Library/Caches/Homebrew/** confirmed=true
+
+<span class="prompt">demo@mac</span> <span class="cwd">skill</span> $ # audit (demo@mac fake paths)
+ <span class="safe">SAFE</span>  Homebrew/**     420 MB  confirmed
+ <span class="safe">SAFE</span>  yarn/**         180 MB  confirmed
+ <span class="ask">ASK</span>   com.demo.ShipIt  95 MB
+ <span class="never">NEVER</span> Documents/**
+ used: <span class="hi">906 MB</span>`,
+  clean: `<span class="prompt">demo@mac</span> <span class="cwd">skill</span> $ # clean confirmed SAFE (lsof first)
+ lsof +D Homebrew → free
+   <span class="ok">deleted</span> Homebrew cache  +420 MB
+ lsof +D yarn → <span class="warn">IN USE -> skip</span>`,
+  ask: `<span class="prompt">demo@mac</span> <span class="cwd">skill</span> $ # ASK items need human confirm
+ delete ~/Library/Caches/com.demo.ShipIt (95 MB)? [y/N] <span class="hi">y</span>
+   deleted ShipIt cache            <span class="ok">+95 MB</span>
+   <span class="ok">rule promoted: SAFE</span> confirmed_by_human=true
+ keep ~/Downloads? [y/N] n
+   kept (stays ASK)`,
+  report: `<span class="prompt">demo@mac</span> <span class="cwd">skill</span> $ # report
+ <span class="hi">before: 906 MB</span>   <span class="hi">after: 306 MB</span>   <span class="safe">freed: 600 MB</span>
+ log: history/demo-run.json`
+};
+
+function renderSkill(highlightIdx) {
+  const el = document.getElementById('code');
+  let html = '';
+  SKILL_LINES.forEach((row, i) => {
+    const [cls, text] = row;
+    const body = cls === 'cm' ? `<span class="cm">${text}</span>` : text;
+    const line = `<span class="ln">${i+1}</span>${body}`;
+    if (i === highlightIdx) html += `<span class="hl">${line} <span class="read-caret"></span></span>\n`;
+    else html += line + '\n';
+  });
+  el.innerHTML = html;
+}
+
+function setTerm(key) {
+  document.getElementById('term').innerHTML = TERM_BEATS[key] || '';
+}
+
+function setFiles(active) {
+  ['f-skill','f-rules','f-verify','f-hist','f-skill2'].forEach(id => {
+    document.getElementById(id).classList.toggle('active', id === active);
+  });
+}
+
+function setMsgs(html) {
+  document.getElementById('msgs').innerHTML = html;
+}
+
+// Timeline state API for Playwright
+window.Demo = {
+  t0() { // establish: user asks, skill chip
+    setFiles('f-skill2');
+    renderSkill(-1);
+    setTerm('empty');
+    setMsgs(`
+      <div class="msg user">My Mac is low on disk. Run the macos-disk-cleanup skill.</div>
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        <span class="chip skill">⚡ macos-disk-cleanup</span>
+        <div>I'll follow <b>SKILL.md</b> — classify, clean only confirmed SAFE, ask on ASK.</div>
+      </div>`);
+  },
+  t1() { // reading skill
+    setFiles('f-skill');
+    renderSkill(7);
+    setTerm('empty');
+    setMsgs(`
+      <div class="msg user">My Mac is low on disk. Run the macos-disk-cleanup skill.</div>
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        <span class="chip skill">⚡ macos-disk-cleanup</span>
+        <div class="tool reading">
+          <div class="th"><span class="name">Read</span> SKILL.md</div>
+          <div class="tb">Loading workflow: verify.sh → SAFE/ASK/NEVER → lsof → ASK promote → report</div>
+        </div>
+      </div>`);
+  },
+  t2() { // verify
+    setFiles('f-verify');
+    renderSkill(7);
+    setTerm('verify');
+    setMsgs(`
+      <div class="msg user">My Mac is low on disk. Run the macos-disk-cleanup skill.</div>
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        <div class="tool">
+          <div class="th"><span class="name">Shell</span> scripts/verify.sh</div>
+          <div class="tb"><span class="chip">SAFE</span> Homebrew/** confirmed=true</div>
+        </div>
+      </div>`);
+  },
+  t3() { // audit
+    setFiles('f-verify');
+    renderSkill(7);
+    setTerm('audit');
+    setMsgs(`
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        Audit complete on demo@mac fake paths:
+        <div style="margin-top:6px">
+          <span class="chip">SAFE</span> 2 confirmed ·
+          <span class="chip ask">ASK</span> 1 ·
+          <span class="chip never">NEVER</span> Documents
+        </div>
+        <div class="tool" style="margin-top:8px">
+          <div class="th"><span class="name">Shell</span> audit</div>
+          <div class="tb">used: 906 MB</div>
+        </div>
+      </div>`);
+  },
+  t4() { // clean + lsof
+    setFiles('f-verify');
+    renderSkill(9);
+    setTerm('clean');
+    setMsgs(`
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        Cleaning confirmed SAFE only. Checking <b>lsof</b> before each delete.
+        <div class="tool" style="margin-top:8px">
+          <div class="th"><span class="name">Shell</span> lsof +D · delete</div>
+          <div class="tb">Homebrew deleted +420 MB
+yarn IN USE → skip</div>
+        </div>
+      </div>`);
+  },
+  t5() { // ASK promote
+    setFiles('f-rules');
+    document.getElementById('tab-skill').classList.remove('on');
+    document.getElementById('tab-rules').classList.add('on');
+    renderSkill(10);
+    setTerm('ask');
+    setMsgs(`
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        <span class="chip ask">ASK</span> ShipIt cache 95 MB — needs your OK.
+      </div>
+      <div class="msg user">y — promote ShipIt to SAFE next time</div>
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        <div class="tool">
+          <div class="th"><span class="name">Edit</span> rules.json</div>
+          <div class="tb">rule promoted: SAFE confirmed_by_human=true
+Downloads kept (stays ASK)</div>
+        </div>
+      </div>`);
+  },
+  t6() { // report payoff
+    setFiles('f-hist');
+    document.getElementById('tab-rules').classList.remove('on');
+    document.getElementById('tab-skill').classList.add('on');
+    renderSkill(11);
+    setTerm('report');
+    setMsgs(`
+      <div class="msg agent">
+        <div class="who">Agent</div>
+        Done on demo@mac.
+        <div style="margin-top:8px;font-size:18px;font-weight:700;line-height:1.6">
+          before: <span style="color:#fafafa">906 MB</span><br/>
+          after: <span style="color:#fafafa">306 MB</span><br/>
+          <span class="chip">freed: 600 MB</span>
+        </div>
+        <div class="dim" style="margin-top:6px;color:#a1a1aa;font-size:12px">log → history/demo-run.json</div>
+      </div>`);
+  }
+};
+window.Demo.t0();
+</script>
+</body>
+</html>

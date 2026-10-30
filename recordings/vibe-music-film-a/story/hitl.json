@@ -1,0 +1,98 @@
+{
+  "schema": "feature_recorder_story_hitl/v1",
+  "feature_slug": "vibe-music-nl-to-pads",
+  "status": "approved",
+  "offered_at": "2026-10-31T06:30:48+08:00",
+  "deadline_at": "2026-10-31T07:25:48+08:00",
+  "suggested_winner": "A",
+  "suggested_score": 97,
+  "auto_lock_policy": "If no explicit pick by deadline_at, lock score-leader (ties: stronger R1/R3/R4).",
+  "locale_note": "Product UI zh-CN only; record real zh chrome. English-UI hard rule cannot apply without product change.",
+  "deploy_lag": {
+    "production_url": "https://vibe-web-gray.vercel.app",
+    "commit": "c0c979f3a70c5cc9d8a5abf14ffe26e15f7f1baf",
+    "idle_on_production": false,
+    "nl_pads_on_production": true,
+    "note": "idleAutoToggle present in local c0c979f3, absent on production curl 2026-10-31; B needs deploy or local host."
+  },
+  "candidates": [
+    {
+      "id": "A",
+      "gap": "sharp",
+      "one_liner": "【不会写 Strudel 的听歌人】以前【一句话没法变成真在响的鼓点，更看不到垫跟拍子亮】→ 用【vibe-music 自然语言→DeepSeek→Strudel】现在【输入一句中文点「生成」，代码出现并播放，16 胶垫跟真鼓 hap 一起亮，琥珀 LED 机身常亮】",
+      "scores": {
+        "R1": 5,
+        "R2": 5,
+        "R3": 5,
+        "R4": 4,
+        "R5": 5,
+        "R6": 5,
+        "R7": 5
+      },
+      "total": 97,
+      "from_cyber_tip": true,
+      "shootable_on_production": true
+    },
+    {
+      "id": "B",
+      "gap": "work",
+      "one_liner": "【要挂着展示页的制作人】以前【没人操作时页面死寂，只能自己反复点「随便来一段」】→ 用【vibe-music 90s 空闲自动随机 prompt（开关默认开）】现在【空闲满 90 秒自动抽例子生成，胶垫自己亮；可关开关】",
+      "scores": {
+        "R1": 3,
+        "R2": 4,
+        "R3": 3,
+        "R4": 3,
+        "R5": 3,
+        "R6": 4,
+        "R7": 2
+      },
+      "total": 64,
+      "from_cyber_tip": false,
+      "idle_feature": true,
+      "shootable_on_production": false
+    },
+    {
+      "id": "C",
+      "gap": "stakes",
+      "one_liner": "【要当面秀产品的独立开发者】以前【不会 Strudel 只能甩黑盒生成器或静帧，无法证明「这是我们浏览器里真在跑的鼓机」】→ 用【vibe-music 胶垫+LCD 代码】现在【当面说一句，代码可改可播，胶垫跟真鼓点亮，琥珀机身一眼是自己的产品】",
+      "scores": {
+        "R1": 4,
+        "R2": 3,
+        "R3": 4,
+        "R4": 4,
+        "R5": 5,
+        "R6": 4,
+        "R7": 4
+      },
+      "total": 80,
+      "from_cyber_tip": false,
+      "shootable_on_production": true
+    }
+  ],
+  "rubric_weights": {
+    "R1": 20,
+    "R2": 15,
+    "R3": 20,
+    "R4": 15,
+    "R5": 15,
+    "R6": 10,
+    "R7": 5
+  },
+  "research_source_count": 12,
+  "research_path": "/workspace/feature-recorder-runs/vibe-music-film-a/story/research.md",
+  "story_path": "/workspace/feature-recorder-runs/vibe-music-film-a/story/story.md",
+  "delegate_path": "/workspace/feature-recorder-runs/vibe-music-film-a/delegate.yaml",
+  "discovery": {
+    "path": "/workspace/feature-recorder-runs/vibe-music-film-a/discovery/report.md",
+    "play_cycle_ok": true,
+    "idle_on_production": false,
+    "scribble_on_main_unverified_prod": "a50f498"
+  },
+  "notes": [
+    "cyber music FYI: scribble-to-sound on main a50f498 default off; HITL still A/B/C"
+  ],
+  "hitl": "approved",
+  "locked": "A",
+  "locked_at": "2026-10-31T06:40:10.341803+08:00",
+  "locked_by": "cyber_music_user_HITL"
+}

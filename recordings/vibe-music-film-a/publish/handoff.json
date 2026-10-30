@@ -1,35 +1,14 @@
 {
   "status": "ready-with-notes",
-  "user_story": "【不会写 Strudel 的听歌人】在【浏览器里想听鼓点】用【vibe-music 自然语言→DeepSeek→Strudel】完成了【点芯片「四拍鼓加八分hihat」后代码 s(\"bd*4, hh*8\") 出现并演奏，胶垫 HH/BD 跟真鼓 hap 一起亮，琥珀演奏 LED 常亮】",
+  "user_story": "【不会写 Strudel 的听歌人】在【浏览器里想听赛博鼓点】用【vibe-music 自然语言→DeepSeek→Strudel】完成了【点新芯片「赛博朋克鼓点真的出声」后代码 s(\"bd*4, ~ cp, hh*8, [lt mt]*2\").gain(0.9).lpf(2000).room(0.3).distort(0.4) 出现并演奏，胶垫 HH/BD/LT 跟真鼓 hap 一起亮，琥珀演奏 LED 常亮】",
   "funnel_url": "https://vibe-music-film-a.pages.dev/",
-  "funnel_checks": [
-    {
-      "url": "https://vibe-music-film-a.pages.dev/",
-      "status": 200
-    },
-    {
-      "url": "https://vibe-music-film-a.pages.dev/demo.gif",
-      "status": 200
-    },
-    {
-      "url": "https://vibe-music-film-a.pages.dev/demo.mp4",
-      "status": 200
-    },
-    {
-      "url": "https://vibe-music-film-a.pages.dev/handoff.json",
-      "status": 200
-    },
-    {
-      "url": "https://vibe-music-film-a.pages.dev/poster.jpg",
-      "status": 200
-    }
-  ],
+  "funnel_checks": [],
   "gif": "https://vibe-music-film-a.pages.dev/demo.gif",
   "mp4": "https://vibe-music-film-a.pages.dev/demo.mp4",
   "poster": "https://vibe-music-film-a.pages.dev/poster.jpg",
-  "commit": "d851806015005cd3213affe5819b2cc957b95db3",
+  "commit": "pending",
   "branch": "feat/vibe-music-film-a",
-  "pr": "https://github.com/liush2yuxjtu/feature-recorder/pull/new/feat/vibe-music-film-a",
+  "pr": "https://github.com/liush2yuxjtu/feature-recorder/pull/1",
   "story_scores": [
     {
       "candidate": "A",
@@ -82,11 +61,10 @@
         0
       ],
       "roi_in_frame": true,
-      "focus": "vibe·music + 胶垫 caption + empty pads",
+      "focus": "vibe·music + empty pads",
       "pointer": "idle",
       "text_expected": [
         "vibe·music",
-        "胶垫 · 按下去会陷，演奏时跟鼓点一起亮",
         "生成"
       ],
       "legibility": "hero",
@@ -94,7 +72,7 @@
       "transition_in": "cut",
       "ease": "none",
       "hold_s": 0.8,
-      "purpose": "Show empty machine before capability"
+      "purpose": "Empty machine before capability"
     },
     {
       "id": "S2",
@@ -111,18 +89,17 @@
         0
       ],
       "roi_in_frame": true,
-      "focus": "chip 四拍鼓加八分hihat + 生成",
-      "pointer": "click chip then 生成",
+      "focus": "chip 赛博朋克鼓点真的出声",
+      "pointer": "click chip",
       "text_expected": [
-        "四拍鼓加八分hihat",
-        "生成"
+        "赛博朋克鼓点真的出声"
       ],
       "legibility": "control",
       "legibility_px": null,
       "transition_in": "push-in 0.5 s",
       "ease": "cosine",
       "hold_s": 0.4,
-      "purpose": "One action: pick NL intent and generate"
+      "purpose": "One action: pick new NL chip"
     },
     {
       "id": "S3",
@@ -142,8 +119,7 @@
       "focus": "作曲中 → LCD code",
       "pointer": "parked",
       "text_expected": [
-        "作曲中",
-        "s(\"bd*4, hh*8\")"
+        "作曲中"
       ],
       "legibility": "result-code",
       "legibility_px": null,
@@ -167,7 +143,7 @@
         0
       ],
       "roi_in_frame": true,
-      "focus": "BD/HH pads lit + 演奏中 + amber LED",
+      "focus": "pads lit + 演奏中 + amber LED",
       "pointer": "parked off pads",
       "text_expected": [
         "演奏中",
@@ -183,7 +159,7 @@
   ],
   "legibility": {
     "verdict": "pass-with-notes",
-    "file": "runs/A-take1/verify/legibility.json",
+    "file": "runs/A-take2/verify/legibility.json",
     "checks": [
       {
         "id": "hero_logo",
@@ -196,7 +172,7 @@
       {
         "id": "result_code",
         "metric": "visual_cap_est",
-        "measured_px": 18,
+        "measured_px": 16,
         "threshold_px": 14,
         "ocr": false,
         "pass": true
@@ -204,54 +180,50 @@
       {
         "id": "chip_label",
         "metric": "visual_cap_est",
-        "measured_px": 14,
+        "measured_px": 13,
         "threshold_px": 12,
         "ocr": false,
         "pass": true
       }
     ],
-    "readable_result_s": 6.0,
+    "readable_result_s": 8.0,
     "centering_pass": true,
     "story_test": {
       "independent": true,
       "pass": true,
-      "answer": "Viewer taps chip → Strudel s(\"bd*4, hh*8\") appears → pads HH/BD light while playing"
+      "answer": "Click cyber chip → long Strudel with distort/room → pads HH/BD/LT light while playing"
     }
   },
   "qa": {
     "verdict": "pass-with-notes",
-    "hold_s": 7.0,
+    "hold_s": 47.0,
     "cjk_frames": 96,
-    "notes": "Pad glow confirmed on strips t295 (HH) and t466–t470 (BD+HH). GIF window = first compose cycle ~288–296s (chip still under cursor); strongest dual-pad pulse is resume segment 449–483s kept in raw/demo-full path. tesseract unavailable on box (apt mirror 500) — legibility is visual estimate, not OCR. Console 400 on /api/vibe pre-existed on other tab; generation succeeded. Production lacked idleAutoToggle (story B not shot)."
+    "notes": "A-take2 on box only. Chip 赛博朋克鼓点真的出声 @0c88661. Pads HH/BD/LT lit (strips t391/t401). No auto-stop; pad hold 07:04:41–07:05:28. tesseract still unavailable. Cursor sometimes over chip in stills despite park instruction."
   },
   "deviations": [
-    "Inbound from cyber music was informal (no YAML); filled branch/commit from origin/main c0c979f3.",
-    "Product UI zh-CN only; English-UI ChatCut rule N/A — recorded real zh chrome.",
-    "Chip auto-submitted (Generate not clicked) — still shows NL→compose→code→pads.",
-    "First play auto-stopped; resumed Play for ≥5s pad hold proof in raw (GIF uses first-cycle payoff).",
-    "record_machine=box (DISPLAY :47 x11grab + computerUse mouse).",
-    "publish via Cloudflare Pages MCP worker-bundle (wrangler had no API token)."
+    "Re-record A-take2 after cyber music reassignment: box only, new chips on prod 0c88661.",
+    "Chip auto-submitted (Generate not clicked).",
+    "Pre-take 90s idle auto-fire reloaded away; not in demo window.",
+    "record_machine=box DISPLAY :47 x11grab + computerUse."
   ],
   "artifacts": [
-    "runs/A-take1/edits/v1/demo.mp4",
-    "runs/A-take1/edits/v1/feature-8s.gif",
-    "runs/A-take1/edits/v1/poster.jpg",
-    "runs/A-take1/shotlist.json",
-    "runs/A-take1/handoff.json",
-    "publish/index.html",
-    "runs/A-take1/raw/RAW_MKV_LOCAL.txt"
+    "runs/A-take2/raw/timing.json",
+    "runs/A-take2/edits/v1/demo.mp4",
+    "runs/A-take2/edits/v1/feature-8s.gif",
+    "runs/A-take2/edits/v1/poster.jpg",
+    "runs/A-take2/shotlist.json",
+    "runs/A-take2/handoff.json",
+    "publish/index.html"
   ],
   "known_weaknesses": [
-    "GIF still shows mouse over chip during pad-lit frames (first-cycle cut).",
-    "No OCR legibility numbers (tesseract install blocked).",
-    "Two Chrome tabs visible in uncropped raw; cropped demo/GIF strip browser chrome.",
-    "Idle 90s story B not on production — not recorded."
+    "No OCR legibility numbers.",
+    "GIF window is pad-payoff (398–406s); compose beat is in demo.mp4 374–406s.",
+    "Idle toggle left ON (prod default)."
   ],
   "issues_for": {
-    "0cc26642-5113-4607-ab7d-2a3fc919a630": [
-      "Optional: redeploy vibe-web to c0c979f3 so idle story B becomes shootable.",
-      "Pre-existing /api/vibe 400 on stale tab — worth checking if session leak."
-    ]
+    "0cc26642-5113-4607-ab7d-2a3fc919a630": []
   },
-  "next": "Cyber music can post or cut further; Feature Recorder will not post."
+  "next": "Cyber music can post or cut; Feature Recorder will not post.",
+  "take": "A-take2",
+  "product_commit": "0c886617dc97864e418e7e8939700c223d1ca41b"
 }

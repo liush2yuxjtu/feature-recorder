@@ -13,7 +13,7 @@
 schema: delegate_to_feature_recorder/v1.1
 repo: liush2yuxjtu/strudel-vibe
 branch: main
-commit: c0c979f3a70c5cc9d8a5abf14ffe26e15f7f1baf
+commit: 0c886617dc97864e418e7e8939700c223d1ca41b
 user_outcome: >-
   Viewer sees a NL prompt submitted, Strudel appear and play, rubber pads light
   in sync with drums, amber LED chassis active; result holds ≥3s.

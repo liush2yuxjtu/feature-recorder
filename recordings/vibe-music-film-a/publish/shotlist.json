@@ -1,15 +1,134 @@
 {
-  "take": "A-take1",
+  "take": "A-take2",
   "edit": "edits/v1",
   "story": "A",
-  "coords": "CSS px of recorded viewport ~1280x800 (computerUse); master may be 1920x1200 display",
-  "gif": {"width": 520, "height": null, "fps": 12, "duration_s": 8, "window_raw_s": [null, null]},
+  "coords": "CSS px of recorded viewport ~1280x800 (computerUse); master 1920x1200 display",
+  "gif": {
+    "width": 520,
+    "height": null,
+    "fps": 12,
+    "duration_s": 8,
+    "window_raw_s": [
+      398,
+      406
+    ]
+  },
   "click_gif_s": 1.2,
   "camera": "full viewport pure-screen; optional light push on pads during result",
   "shots": [
-    {"id":"S1","t_start":0,"t_end":1.0,"t_raw_start":null,"beat":"B0 establish","framing":"full","zoom":1,"crop_css":null,"roi_css":null,"roi_center_offset_pct":[0,0],"roi_in_frame":true,"focus":"vibe·music + 胶垫 caption + empty pads","pointer":"idle","text_expected":["vibe·music","胶垫 · 按下去会陷，演奏时跟鼓点一起亮","生成"],"legibility":"hero","legibility_px":null,"transition_in":"cut","ease":"none","hold_s":0.8,"purpose":"Show empty machine before capability"},
-    {"id":"S2","t_start":1.0,"t_end":2.2,"t_raw_start":null,"beat":"B2 action","framing":"medium","zoom":1.3,"crop_css":null,"roi_css":null,"roi_center_offset_pct":[0,0],"roi_in_frame":true,"focus":"chip 四拍鼓加八分hihat + 生成","pointer":"click chip then 生成","text_expected":["四拍鼓加八分hihat","生成"],"legibility":"control","legibility_px":null,"transition_in":"push-in 0.5 s","ease":"cosine","hold_s":0.4,"purpose":"One action: pick NL intent and generate"},
-    {"id":"S3","t_start":2.2,"t_end":4.0,"t_raw_start":null,"beat":"B3 result","framing":"medium","zoom":1.4,"crop_css":null,"roi_css":null,"roi_center_offset_pct":[0,0],"roi_in_frame":true,"focus":"作曲中 → LCD code","pointer":"parked","text_expected":["作曲中","s(\"bd*4, hh*8\")"],"legibility":"result-code","legibility_px":null,"transition_in":"cut","ease":"none","hold_s":1.0,"purpose":"DeepSeek Strudel appears"},
-    {"id":"S4","t_start":4.0,"t_end":8.0,"t_raw_start":null,"beat":"B4 payoff","framing":"medium","zoom":1.5,"crop_css":null,"roi_css":null,"roi_center_offset_pct":[0,0],"roi_in_frame":true,"focus":"BD/HH pads lit + 演奏中 + amber LED","pointer":"parked off pads","text_expected":["演奏中","胶垫"],"legibility":"result-pads","legibility_px":null,"transition_in":"push-in 0.4 s","ease":"cosine","hold_s":3.5,"purpose":"Pads sync with real drum haps; hold ≥3s proof"}
+    {
+      "id": "S1",
+      "t_start": 0,
+      "t_end": 1.0,
+      "t_raw_start": null,
+      "beat": "B0 establish",
+      "framing": "full",
+      "zoom": 1,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "vibe·music + empty pads",
+      "pointer": "idle",
+      "text_expected": [
+        "vibe·music",
+        "生成"
+      ],
+      "legibility": "hero",
+      "legibility_px": null,
+      "transition_in": "cut",
+      "ease": "none",
+      "hold_s": 0.8,
+      "purpose": "Empty machine before capability"
+    },
+    {
+      "id": "S2",
+      "t_start": 1.0,
+      "t_end": 2.2,
+      "t_raw_start": null,
+      "beat": "B2 action",
+      "framing": "medium",
+      "zoom": 1.3,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "chip 赛博朋克鼓点真的出声",
+      "pointer": "click chip",
+      "text_expected": [
+        "赛博朋克鼓点真的出声"
+      ],
+      "legibility": "control",
+      "legibility_px": null,
+      "transition_in": "push-in 0.5 s",
+      "ease": "cosine",
+      "hold_s": 0.4,
+      "purpose": "One action: pick new NL chip"
+    },
+    {
+      "id": "S3",
+      "t_start": 2.2,
+      "t_end": 4.0,
+      "t_raw_start": null,
+      "beat": "B3 result",
+      "framing": "medium",
+      "zoom": 1.4,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "作曲中 → LCD code",
+      "pointer": "parked",
+      "text_expected": [
+        "作曲中"
+      ],
+      "legibility": "result-code",
+      "legibility_px": null,
+      "transition_in": "cut",
+      "ease": "none",
+      "hold_s": 1.0,
+      "purpose": "DeepSeek Strudel appears"
+    },
+    {
+      "id": "S4",
+      "t_start": 4.0,
+      "t_end": 8.0,
+      "t_raw_start": null,
+      "beat": "B4 payoff",
+      "framing": "medium",
+      "zoom": 1.5,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "pads lit + 演奏中 + amber LED",
+      "pointer": "parked off pads",
+      "text_expected": [
+        "演奏中",
+        "胶垫"
+      ],
+      "legibility": "result-pads",
+      "legibility_px": null,
+      "transition_in": "push-in 0.4 s",
+      "ease": "cosine",
+      "hold_s": 3.5,
+      "purpose": "Pads sync with real drum haps; hold ≥3s proof"
+    }
+  ],
+  "demo_window_raw_s": [
+    374,
+    406
   ]
 }

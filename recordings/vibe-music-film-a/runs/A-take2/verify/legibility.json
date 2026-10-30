@@ -1,0 +1,42 @@
+{
+  "verdict": "pass-with-notes",
+  "checks": [
+    {
+      "id": "hero_logo",
+      "metric": "visual_cap_est",
+      "measured_px": 22,
+      "threshold_px": 16,
+      "ocr": false,
+      "pass": true
+    },
+    {
+      "id": "result_code",
+      "metric": "visual_cap_est",
+      "measured_px": 16,
+      "threshold_px": 14,
+      "ocr": false,
+      "pass": true
+    },
+    {
+      "id": "chip_label",
+      "metric": "visual_cap_est",
+      "measured_px": 13,
+      "threshold_px": 12,
+      "ocr": false,
+      "pass": true
+    }
+  ],
+  "readable_result_s": 8.0,
+  "centering_pass": true,
+  "story_test": {
+    "independent": true,
+    "pass": true,
+    "answer": "Click cyber chip → long Strudel with distort/room → pads HH/BD/LT light while playing"
+  },
+  "method": "visual_estimate_no_ocr",
+  "strips_sampled": [
+    "t391",
+    "t401",
+    "t410"
+  ]
+}

@@ -27,9 +27,9 @@
   "gif": "https://vibe-music-film-a.pages.dev/demo.gif",
   "mp4": "https://vibe-music-film-a.pages.dev/demo.mp4",
   "poster": "https://vibe-music-film-a.pages.dev/poster.jpg",
-  "commit": "0402855c89cd70d10687aace71d7cbd62da8cf11",
+  "commit": "d851806015005cd3213affe5819b2cc957b95db3",
   "branch": "feat/vibe-music-film-a",
-  "pr": "",
+  "pr": "https://github.com/liush2yuxjtu/feature-recorder/pull/new/feat/vibe-music-film-a",
   "story_scores": [
     {
       "candidate": "A",

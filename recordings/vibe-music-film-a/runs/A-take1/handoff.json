@@ -1,0 +1,257 @@
+{
+  "status": "ready-with-notes",
+  "user_story": "【不会写 Strudel 的听歌人】在【浏览器里想听鼓点】用【vibe-music 自然语言→DeepSeek→Strudel】完成了【点芯片「四拍鼓加八分hihat」后代码 s(\"bd*4, hh*8\") 出现并演奏，胶垫 HH/BD 跟真鼓 hap 一起亮，琥珀演奏 LED 常亮】",
+  "funnel_url": "https://vibe-music-film-a.pages.dev/",
+  "funnel_checks": [
+    {
+      "url": "https://vibe-music-film-a.pages.dev/",
+      "status": 200
+    },
+    {
+      "url": "https://vibe-music-film-a.pages.dev/demo.gif",
+      "status": 200
+    },
+    {
+      "url": "https://vibe-music-film-a.pages.dev/demo.mp4",
+      "status": 200
+    },
+    {
+      "url": "https://vibe-music-film-a.pages.dev/handoff.json",
+      "status": 200
+    },
+    {
+      "url": "https://vibe-music-film-a.pages.dev/poster.jpg",
+      "status": 200
+    }
+  ],
+  "gif": "https://vibe-music-film-a.pages.dev/demo.gif",
+  "mp4": "https://vibe-music-film-a.pages.dev/demo.mp4",
+  "poster": "https://vibe-music-film-a.pages.dev/poster.jpg",
+  "commit": "d851806015005cd3213affe5819b2cc957b95db3",
+  "branch": "feat/vibe-music-film-a",
+  "pr": "https://github.com/liush2yuxjtu/feature-recorder/pull/new/feat/vibe-music-film-a",
+  "story_scores": [
+    {
+      "candidate": "A",
+      "R1": 5,
+      "R2": 5,
+      "R3": 5,
+      "R4": 4,
+      "R5": 5,
+      "R6": 5,
+      "R7": 5,
+      "total": 97
+    },
+    {
+      "candidate": "B",
+      "R1": 3,
+      "R2": 4,
+      "R3": 3,
+      "R4": 3,
+      "R5": 3,
+      "R6": 4,
+      "R7": 2,
+      "total": 64
+    },
+    {
+      "candidate": "C",
+      "R1": 4,
+      "R2": 3,
+      "R3": 4,
+      "R4": 4,
+      "R5": 5,
+      "R6": 4,
+      "R7": 4,
+      "total": 80
+    }
+  ],
+  "winner": "A",
+  "shot_list": [
+    {
+      "id": "S1",
+      "t_start": 0,
+      "t_end": 1.0,
+      "t_raw_start": null,
+      "beat": "B0 establish",
+      "framing": "full",
+      "zoom": 1,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "vibe·music + 胶垫 caption + empty pads",
+      "pointer": "idle",
+      "text_expected": [
+        "vibe·music",
+        "胶垫 · 按下去会陷，演奏时跟鼓点一起亮",
+        "生成"
+      ],
+      "legibility": "hero",
+      "legibility_px": null,
+      "transition_in": "cut",
+      "ease": "none",
+      "hold_s": 0.8,
+      "purpose": "Show empty machine before capability"
+    },
+    {
+      "id": "S2",
+      "t_start": 1.0,
+      "t_end": 2.2,
+      "t_raw_start": null,
+      "beat": "B2 action",
+      "framing": "medium",
+      "zoom": 1.3,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "chip 四拍鼓加八分hihat + 生成",
+      "pointer": "click chip then 生成",
+      "text_expected": [
+        "四拍鼓加八分hihat",
+        "生成"
+      ],
+      "legibility": "control",
+      "legibility_px": null,
+      "transition_in": "push-in 0.5 s",
+      "ease": "cosine",
+      "hold_s": 0.4,
+      "purpose": "One action: pick NL intent and generate"
+    },
+    {
+      "id": "S3",
+      "t_start": 2.2,
+      "t_end": 4.0,
+      "t_raw_start": null,
+      "beat": "B3 result",
+      "framing": "medium",
+      "zoom": 1.4,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "作曲中 → LCD code",
+      "pointer": "parked",
+      "text_expected": [
+        "作曲中",
+        "s(\"bd*4, hh*8\")"
+      ],
+      "legibility": "result-code",
+      "legibility_px": null,
+      "transition_in": "cut",
+      "ease": "none",
+      "hold_s": 1.0,
+      "purpose": "DeepSeek Strudel appears"
+    },
+    {
+      "id": "S4",
+      "t_start": 4.0,
+      "t_end": 8.0,
+      "t_raw_start": null,
+      "beat": "B4 payoff",
+      "framing": "medium",
+      "zoom": 1.5,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "BD/HH pads lit + 演奏中 + amber LED",
+      "pointer": "parked off pads",
+      "text_expected": [
+        "演奏中",
+        "胶垫"
+      ],
+      "legibility": "result-pads",
+      "legibility_px": null,
+      "transition_in": "push-in 0.4 s",
+      "ease": "cosine",
+      "hold_s": 3.5,
+      "purpose": "Pads sync with real drum haps; hold ≥3s proof"
+    }
+  ],
+  "legibility": {
+    "verdict": "pass-with-notes",
+    "file": "runs/A-take1/verify/legibility.json",
+    "checks": [
+      {
+        "id": "hero_logo",
+        "metric": "visual_cap_est",
+        "measured_px": 22,
+        "threshold_px": 16,
+        "ocr": false,
+        "pass": true
+      },
+      {
+        "id": "result_code",
+        "metric": "visual_cap_est",
+        "measured_px": 18,
+        "threshold_px": 14,
+        "ocr": false,
+        "pass": true
+      },
+      {
+        "id": "chip_label",
+        "metric": "visual_cap_est",
+        "measured_px": 14,
+        "threshold_px": 12,
+        "ocr": false,
+        "pass": true
+      }
+    ],
+    "readable_result_s": 6.0,
+    "centering_pass": true,
+    "story_test": {
+      "independent": true,
+      "pass": true,
+      "answer": "Viewer taps chip → Strudel s(\"bd*4, hh*8\") appears → pads HH/BD light while playing"
+    }
+  },
+  "qa": {
+    "verdict": "pass-with-notes",
+    "hold_s": 7.0,
+    "cjk_frames": 96,
+    "notes": "Pad glow confirmed on strips t295 (HH) and t466–t470 (BD+HH). GIF window = first compose cycle ~288–296s (chip still under cursor); strongest dual-pad pulse is resume segment 449–483s kept in raw/demo-full path. tesseract unavailable on box (apt mirror 500) — legibility is visual estimate, not OCR. Console 400 on /api/vibe pre-existed on other tab; generation succeeded. Production lacked idleAutoToggle (story B not shot)."
+  },
+  "deviations": [
+    "Inbound from cyber music was informal (no YAML); filled branch/commit from origin/main c0c979f3.",
+    "Product UI zh-CN only; English-UI ChatCut rule N/A — recorded real zh chrome.",
+    "Chip auto-submitted (Generate not clicked) — still shows NL→compose→code→pads.",
+    "First play auto-stopped; resumed Play for ≥5s pad hold proof in raw (GIF uses first-cycle payoff).",
+    "record_machine=box (DISPLAY :47 x11grab + computerUse mouse).",
+    "publish via Cloudflare Pages MCP worker-bundle (wrangler had no API token)."
+  ],
+  "artifacts": [
+    "runs/A-take1/edits/v1/demo.mp4",
+    "runs/A-take1/edits/v1/feature-8s.gif",
+    "runs/A-take1/edits/v1/poster.jpg",
+    "runs/A-take1/shotlist.json",
+    "runs/A-take1/handoff.json",
+    "publish/index.html",
+    "runs/A-take1/raw/RAW_MKV_LOCAL.txt"
+  ],
+  "known_weaknesses": [
+    "GIF still shows mouse over chip during pad-lit frames (first-cycle cut).",
+    "No OCR legibility numbers (tesseract install blocked).",
+    "Two Chrome tabs visible in uncropped raw; cropped demo/GIF strip browser chrome.",
+    "Idle 90s story B not on production — not recorded."
+  ],
+  "issues_for": {
+    "0cc26642-5113-4607-ab7d-2a3fc919a630": [
+      "Optional: redeploy vibe-web to c0c979f3 so idle story B becomes shootable.",
+      "Pre-existing /api/vibe 400 on stale tab — worth checking if session leak."
+    ]
+  },
+  "next": "Cyber music can post or cut further; Feature Recorder will not post."
+}

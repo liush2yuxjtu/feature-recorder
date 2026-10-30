@@ -1,0 +1,21 @@
+{
+  "record_start": "2026-10-31T06:58:00+08:00",
+  "idle_hold": "07:04:12",
+  "chip_click": "07:04:18",
+  "first_code_playing": "07:04:31",
+  "auto_stopped": null,
+  "resume_play": null,
+  "pad_hold_start": "07:04:41",
+  "pad_hold_end": "07:05:28",
+  "stop_click": "07:05:28",
+  "offsets_s": {
+    "idle": 372,
+    "chip": 378,
+    "code": 391,
+    "pad_hold": 401,
+    "stop": 448
+  },
+  "chip": "赛博朋克鼓点真的出声",
+  "code": "s(\"bd*4, ~ cp, hh*8, [lt mt]*2\").gain(0.9).lpf(2000).room(0.3).distort(0.4)",
+  "notes": "Clean single-tab take; no auto-stop; pad hold ~47s. Pre-take idle auto-fire reloaded away."
+}

@@ -1,0 +1,28 @@
+# delegate_to_feature_recorder/v1.1
+# Deviations:
+# - inbound from cyber music was informal (no YAML); filled branch/commit from local
+#   origin/main — commit c0c979f3a70c5cc9d8a5abf14ffe26e15f7f1baf (90s idle auto-prompt
+#   on top of pad↔hap sync fb664fa).
+# - product UI is zh-CN only (html lang=zh-CN; no English locale). ChatCut English-UI
+#   hard rule cannot apply without a product change — record real production zh UI and
+#   note in handoff (ui_language: zh-CN; R4 silent relies on visible Chinese chrome +
+#   pads/LED motion).
+# - production URL https://vibe-web-gray.vercel.app may lag behind c0c979f3 (curl 2026-10-31
+#   lacked idleAutoToggle). Primary film path NL→pads is live; idle story needs deploy
+#   catch-up or local/preview host.
+schema: delegate_to_feature_recorder/v1.1
+repo: liush2yuxjtu/strudel-vibe
+branch: main
+commit: 0c886617dc97864e418e7e8939700c223d1ca41b
+user_outcome: >-
+  Viewer sees a NL prompt submitted, Strudel appear and play, rubber pads light
+  in sync with drums, amber LED chassis active; result holds ≥3s.
+reply_to: 0cc26642-5113-4607-ab7d-2a3fc919a630
+record_machine: box
+publish_programs_repo: liush2yuxjtu/feature-recorder
+entry_url: https://vibe-web-gray.vercel.app
+feature_slug: vibe-music-nl-to-pads
+format: both
+demo_prompt: >-
+  自然语言 intent → DeepSeek 出 Strudel → 胶垫跟真鼓点一起亮；暖机身琥珀 LED。
+  即将上线：90s 空闲自动随机音乐 prompt（开关默认开）。

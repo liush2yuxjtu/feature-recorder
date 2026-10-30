@@ -1,0 +1,48 @@
+{
+  "verdict": "pass-with-notes",
+  "checks": [
+    {
+      "id": "hero_logo",
+      "metric": "visual_cap_est",
+      "measured_px": 22,
+      "threshold_px": 16,
+      "ocr": false,
+      "pass": true
+    },
+    {
+      "id": "result_code",
+      "metric": "visual_cap_est",
+      "measured_px": 18,
+      "threshold_px": 14,
+      "ocr": false,
+      "pass": true
+    },
+    {
+      "id": "chip_label",
+      "metric": "visual_cap_est",
+      "measured_px": 14,
+      "threshold_px": 12,
+      "ocr": false,
+      "pass": true
+    }
+  ],
+  "readable_result_s": 6.0,
+  "centering_pass": true,
+  "story_test": {
+    "independent": true,
+    "pass": true,
+    "answer": "Viewer taps chip → Strudel s(\"bd*4, hh*8\") appears → pads HH/BD light while playing"
+  },
+  "method": "visual_estimate_no_ocr",
+  "gif_frames_sampled": [
+    "f010",
+    "f050",
+    "f080"
+  ],
+  "strips_sampled": [
+    "t295",
+    "t466",
+    "t470",
+    "gif-contact"
+  ]
+}

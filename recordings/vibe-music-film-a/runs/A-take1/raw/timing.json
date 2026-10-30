@@ -1,0 +1,12 @@
+{
+  "record_start_approx": "2026-10-31T06:40:41+08:00",
+  "idle_hold": "06:45:02",
+  "chip_click": "06:45:23",
+  "first_code_playing": "06:45:36",
+  "auto_stopped": "06:46:42",
+  "resume_play": "06:48:10",
+  "pad_hold_start": "06:48:27",
+  "pad_hold_end": "06:48:34",
+  "stop_click": "06:48:44",
+  "notes": "Best payoff: resume play 06:48:10–06:48:44 with BD/HH pulsing. First compose cycle 06:45:23–06:45:36 also useful for generate beat."
+}

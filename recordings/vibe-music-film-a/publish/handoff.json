@@ -1,0 +1,229 @@
+{
+  "status": "ready-with-notes",
+  "user_story": "【不会写 Strudel 的听歌人】在【浏览器里想听赛博鼓点】用【vibe-music 自然语言→DeepSeek→Strudel】完成了【点新芯片「赛博朋克鼓点真的出声」后代码 s(\"bd*4, ~ cp, hh*8, [lt mt]*2\").gain(0.9).lpf(2000).room(0.3).distort(0.4) 出现并演奏，胶垫 HH/BD/LT 跟真鼓 hap 一起亮，琥珀演奏 LED 常亮】",
+  "funnel_url": "https://vibe-music-film-a.pages.dev/",
+  "funnel_checks": [],
+  "gif": "https://vibe-music-film-a.pages.dev/demo.gif",
+  "mp4": "https://vibe-music-film-a.pages.dev/demo.mp4",
+  "poster": "https://vibe-music-film-a.pages.dev/poster.jpg",
+  "commit": "cbf009f3cafe5e60ca705082096d0e889b8ac12b",
+  "branch": "feat/vibe-music-film-a",
+  "pr": "https://github.com/liush2yuxjtu/feature-recorder/pull/1",
+  "story_scores": [
+    {
+      "candidate": "A",
+      "R1": 5,
+      "R2": 5,
+      "R3": 5,
+      "R4": 4,
+      "R5": 5,
+      "R6": 5,
+      "R7": 5,
+      "total": 97
+    },
+    {
+      "candidate": "B",
+      "R1": 3,
+      "R2": 4,
+      "R3": 3,
+      "R4": 3,
+      "R5": 3,
+      "R6": 4,
+      "R7": 2,
+      "total": 64
+    },
+    {
+      "candidate": "C",
+      "R1": 4,
+      "R2": 3,
+      "R3": 4,
+      "R4": 4,
+      "R5": 5,
+      "R6": 4,
+      "R7": 4,
+      "total": 80
+    }
+  ],
+  "winner": "A",
+  "shot_list": [
+    {
+      "id": "S1",
+      "t_start": 0,
+      "t_end": 1.0,
+      "t_raw_start": null,
+      "beat": "B0 establish",
+      "framing": "full",
+      "zoom": 1,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "vibe·music + empty pads",
+      "pointer": "idle",
+      "text_expected": [
+        "vibe·music",
+        "生成"
+      ],
+      "legibility": "hero",
+      "legibility_px": null,
+      "transition_in": "cut",
+      "ease": "none",
+      "hold_s": 0.8,
+      "purpose": "Empty machine before capability"
+    },
+    {
+      "id": "S2",
+      "t_start": 1.0,
+      "t_end": 2.2,
+      "t_raw_start": null,
+      "beat": "B2 action",
+      "framing": "medium",
+      "zoom": 1.3,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "chip 赛博朋克鼓点真的出声",
+      "pointer": "click chip",
+      "text_expected": [
+        "赛博朋克鼓点真的出声"
+      ],
+      "legibility": "control",
+      "legibility_px": null,
+      "transition_in": "push-in 0.5 s",
+      "ease": "cosine",
+      "hold_s": 0.4,
+      "purpose": "One action: pick new NL chip"
+    },
+    {
+      "id": "S3",
+      "t_start": 2.2,
+      "t_end": 4.0,
+      "t_raw_start": null,
+      "beat": "B3 result",
+      "framing": "medium",
+      "zoom": 1.4,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "作曲中 → LCD code",
+      "pointer": "parked",
+      "text_expected": [
+        "作曲中"
+      ],
+      "legibility": "result-code",
+      "legibility_px": null,
+      "transition_in": "cut",
+      "ease": "none",
+      "hold_s": 1.0,
+      "purpose": "DeepSeek Strudel appears"
+    },
+    {
+      "id": "S4",
+      "t_start": 4.0,
+      "t_end": 8.0,
+      "t_raw_start": null,
+      "beat": "B4 payoff",
+      "framing": "medium",
+      "zoom": 1.5,
+      "crop_css": null,
+      "roi_css": null,
+      "roi_center_offset_pct": [
+        0,
+        0
+      ],
+      "roi_in_frame": true,
+      "focus": "pads lit + 演奏中 + amber LED",
+      "pointer": "parked off pads",
+      "text_expected": [
+        "演奏中",
+        "胶垫"
+      ],
+      "legibility": "result-pads",
+      "legibility_px": null,
+      "transition_in": "push-in 0.4 s",
+      "ease": "cosine",
+      "hold_s": 3.5,
+      "purpose": "Pads sync with real drum haps; hold ≥3s proof"
+    }
+  ],
+  "legibility": {
+    "verdict": "pass-with-notes",
+    "file": "runs/A-take2/verify/legibility.json",
+    "checks": [
+      {
+        "id": "hero_logo",
+        "metric": "visual_cap_est",
+        "measured_px": 22,
+        "threshold_px": 16,
+        "ocr": false,
+        "pass": true
+      },
+      {
+        "id": "result_code",
+        "metric": "visual_cap_est",
+        "measured_px": 16,
+        "threshold_px": 14,
+        "ocr": false,
+        "pass": true
+      },
+      {
+        "id": "chip_label",
+        "metric": "visual_cap_est",
+        "measured_px": 13,
+        "threshold_px": 12,
+        "ocr": false,
+        "pass": true
+      }
+    ],
+    "readable_result_s": 8.0,
+    "centering_pass": true,
+    "story_test": {
+      "independent": true,
+      "pass": true,
+      "answer": "Click cyber chip → long Strudel with distort/room → pads HH/BD/LT light while playing"
+    }
+  },
+  "qa": {
+    "verdict": "pass-with-notes",
+    "hold_s": 47.0,
+    "cjk_frames": 96,
+    "notes": "A-take2 on box only. Chip 赛博朋克鼓点真的出声 @0c88661. Pads HH/BD/LT lit (strips t391/t401). No auto-stop; pad hold 07:04:41–07:05:28. tesseract still unavailable. Cursor sometimes over chip in stills despite park instruction."
+  },
+  "deviations": [
+    "Re-record A-take2 after cyber music reassignment: box only, new chips on prod 0c88661.",
+    "Chip auto-submitted (Generate not clicked).",
+    "Pre-take 90s idle auto-fire reloaded away; not in demo window.",
+    "record_machine=box DISPLAY :47 x11grab + computerUse."
+  ],
+  "artifacts": [
+    "runs/A-take2/raw/timing.json",
+    "runs/A-take2/edits/v1/demo.mp4",
+    "runs/A-take2/edits/v1/feature-8s.gif",
+    "runs/A-take2/edits/v1/poster.jpg",
+    "runs/A-take2/shotlist.json",
+    "runs/A-take2/handoff.json",
+    "publish/index.html"
+  ],
+  "known_weaknesses": [
+    "No OCR legibility numbers.",
+    "GIF window is pad-payoff (398–406s); compose beat is in demo.mp4 374–406s.",
+    "Idle toggle left ON (prod default)."
+  ],
+  "issues_for": {
+    "0cc26642-5113-4607-ab7d-2a3fc919a630": []
+  },
+  "next": "Cyber music can post or cut; Feature Recorder will not post.",
+  "take": "A-take2",
+  "product_commit": "0c886617dc97864e418e7e8939700c223d1ca41b"
+}

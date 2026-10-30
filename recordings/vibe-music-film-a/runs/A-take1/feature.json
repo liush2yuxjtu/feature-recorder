@@ -1,0 +1,13 @@
+{
+  "feature_slug": "vibe-music-nl-to-pads",
+  "user_outcome": "Viewer sees NL prompt submitted, Strudel appear and play, rubber pads light in sync with drums, amber LED chassis active; result holds ≥3s.",
+  "entry_url": "https://vibe-web-gray.vercel.app",
+  "repo": "liush2yuxjtu/strudel-vibe",
+  "branch": "main",
+  "commit": "c0c979f3",
+  "ui_language": "zh-CN",
+  "ui_language_note": "Product is zh-CN only; English-UI ChatCut rule N/A — recorded real production chrome.",
+  "record_machine": "box",
+  "winner_story": "A",
+  "format": "both"
+}
